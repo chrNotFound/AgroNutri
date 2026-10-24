@@ -1,0 +1,18 @@
+# Reglas R8 del proyecto (AGP junta todos los archivos de esta carpeta).
+
+# Retrofit y Gson usan reflexión: hay que conservar las firmas genéricas y las anotaciones.
+-keepattributes Signature, *Annotation*, InnerClasses, EnclosingMethod
+
+# Gson convierte estas clases a JSON por el nombre de sus campos; no se deben renombrar.
+-keepclassmembers class cl.duoc.agronutri.data.** { <fields>; }
+-keepclassmembers class cl.duoc.agronutri.data.remote.** { <fields>; }
+
+# Interfaz de Retrofit
+-keep interface cl.duoc.agronutri.data.remote.ApiService { *; }
+
+# Retrofit con funciones suspend
+-keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
+-keep,allowobfuscation,allowshrinking class retrofit2.Response
+
+# WorkManager crea el SyncWorker por reflexión
+-keep class cl.duoc.agronutri.sync.SyncWorker { *; }
