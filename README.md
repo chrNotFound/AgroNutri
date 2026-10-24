@@ -65,7 +65,6 @@ La app espera un servidor (por ejemplo, Spring Boot) con estas rutas:
 
 Ambas deben responder 200 si todo salió bien. El servidor debe hacer upsert por `id`, ya que un registro puede reenviarse.
 
-La sincronización se ejecuta cada 15 minutos cuando hay red, y también al momento de guardar. La URL base está en `ApiClient.URL_BASE` y por defecto apunta a `http://10.0.2.2:8080/`, que es el computador visto desde el emulador de Android.
 
 ## Cómo ejecutarlo
 
@@ -73,4 +72,3 @@ La sincronización se ejecuta cada 15 minutos cuando hay red, y también al mome
 2. Esperar a que Gradle sincronice las dependencias.
 3. Ejecutar en un emulador o dispositivo con Android 13 o superior.
 
-Para
